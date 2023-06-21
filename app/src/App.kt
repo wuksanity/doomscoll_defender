@@ -11,23 +11,23 @@ interface AppInterface {
     var timesOpenedToday: Pair<Int, String>   // <timesOpened, date>
 
     private fun addTime(time: Int) {
-        this.totalRunTime += time
-        this.weeklyRunTime += time
-        this.dailyRunTime += time
+        totalRunTime += time
+        weeklyRunTime += time
+        dailyRunTime += time
     }
 
     private fun resetDailies() {
-        this.timesOpenedToday = Pair(0, SimpleDateFormat("dd MMM").format(Date()))
-        this.dailyRunTime = 0
+        timesOpenedToday = Pair(0, SimpleDateFormat("dd MMM").format(Date()))
+        dailyRunTime = 0
     }
 
     private fun resetWeeklyTime() {
-        this.weeklyRunTime = 0
+        weeklyRunTime = 0
     }
 
 }
 
-class App(val name: String) : AppInterface {
+public class App(val name: String) : AppInterface {
 
     override var totalRunTime = 0
     override var weeklyRunTime = 0
